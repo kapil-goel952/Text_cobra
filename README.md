@@ -19,3 +19,23 @@ Remove text line by line.
 Simple and beginner-friendly interface.
 Menu-driven interaction.
 Practice with Python lists, strings, loops, and functions.
+
+🛠️ Technologies Used
+Programming Language: Python
+Concepts Used:
+Lists
+Tuples
+Strings
+Loops
+Functions
+Modules
+Conditional Statements
+User Input and Output
+🚀 Getting Started
+Prerequisites
+
+Make sure Python is installed on your system.
+
+You can check your Python installation using:
+
+python --version
