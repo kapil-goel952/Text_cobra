@@ -39,3 +39,52 @@ Make sure Python is installed on your system.
 You can check your Python installation using:
 
 python --version
+
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/kapil-goel952/Text_cobra.git
+
+Navigate to the project directory:
+
+cd Text_cobra
+
+Run the Python program:
+
+python main.py
+
+Note: Replace main.py with the actual entry-point filename if your project uses a different name.
+
+🎯 Project Objective
+
+The objective of Text Cobra is to apply basic Python programming concepts to a real-world-inspired application.
+
+Through this project, I aim to improve my understanding of:
+
+Data storage using Python data structures.
+Handling user input.
+Working with text and strings.
+Using functions to organize code.
+Building menu-driven applications.
+Developing logical problem-solving skills.
+🔮 Future Improvements
+
+The following features may be added in future versions:
+
+Save text to a file.
+Load previously saved text.
+Edit existing lines.
+Search for specific text.
+Improve the user interface.
+Add more text editing functionality.
+👨‍💻 Author
+
+Kapil Goel
+
+GitHub: kapil-goel952
+
+📜 License
+
+This project is created for educational and learning purposes.
