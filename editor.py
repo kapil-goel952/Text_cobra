@@ -6,8 +6,6 @@ def write():
         line=input()
         if line==":q":
             break
-        
-            return
         l.append(line)
 def read():
     for i in l:
