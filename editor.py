@@ -1,20 +1,37 @@
-lines = []
+class PyTextEditor:
 
+    def __init__(self):
+        self.lines = []
 
-def write():
-    print("\nEnter your text.")
-    print("Type :q on a new line to finish writing.\n")
+    # 1. Write text
+    def write(self):
+        print("\nEnter your text.")
+        print("Type :q on a new line to finish.\n")
 
-    while True:
-        line = input()
+        while True:
+            line = input()
 
-        if line == ":q":
-            break
+            if line == ":q":
+                break
 
-        lines.append(line)
+            self.lines.append(line)
 
-    print("Text added successfully.\n")
+        print("\nText added successfully.\n")
 
+    # 2. Read document
+    def read(self):
+        if not self.lines:
+            print("\nDocument is empty.\n")
+            return
+
+        print("\n---------- DOCUMENT ----------")
+
+        for number, line in enumerate(self.lines, 1):
+            print(f"{number}: {line}")
+
+        print("------------------------------\n")
+
+    # 3. Search text
 
 def read():
     if not lines:
