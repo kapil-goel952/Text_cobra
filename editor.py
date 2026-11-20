@@ -32,85 +32,83 @@ class PyTextEditor:
         print("------------------------------\n")
 
     # 3. Search text
-
-def read():
-    if not lines:
-        print("\nDocument is empty.\n")
-        return
-
-    print("\n---------- DOCUMENT ----------")
-
-    for number, line in enumerate(lines, start=1):
-        print(f"{number}: {line}")
-
-    print("------------------------------\n")
-
-
-def search():
-    if not lines:
-        print("\nDocument is empty.\n")
-        return
-
-    value = input("\nEnter the text you want to search for: ")
-
-    found = False
-
-    for number, line in enumerate(lines, start=1):
-        if value.lower() in line.lower():
-            print(f"Line {number}: {line}")
-            found = True
-
-    if not found:
-        print("Text not found.")
-
-    print()
-
-
-def edit_line():
-    if not lines:
-        print("\nDocument is empty.\n")
-        return
-
-    read()
-
-    try:
-        number = int(input("Enter the line number you want to edit: "))
-
-        if number < 1 or number > len(lines):
-            print("Invalid line number.\n")
+ def search(self):
+        if not self.lines:
+            print("\nDocument is empty.\n")
             return
 
-        new_text = input("Enter the new text: ")
+        value = input("\nEnter text to search: ").lower()
+        found = False
 
-        lines[number - 1] = new_text
+        for number, line in enumerate(self.lines, 1):
+            if value in line.lower():
+                print(f"Line {number}: {line}")
+                found = True
 
-        print("Line updated successfully.\n")
+        if not found:
+            print("Text not found.")
 
-    except ValueError:
-        print("Please enter a valid line number.\n")
+        print()
 
-
-def delete_line():
-    if not lines:
-        print("\nDocument is empty.\n")
-        return
-
-    read()
-
-    try:
-        number = int(input("Enter the line number you want to delete: "))
-
-        if number < 1 or number > len(lines):
-            print("Invalid line number.\n")
+    # 4. Edit line
+    def edit_line(self):
+        if not self.lines:
+            print("\nDocument is empty.\n")
             return
 
-        deleted = lines.pop(number - 1)
+        self.read()
 
-        print(f"Deleted: {deleted}")
-        print("Line deleted successfully.\n")
+        try:
+            number = int(input("Enter line number to edit: "))
 
-    except ValueError:
-        print("Please enter a valid line number.\n")
+            if not 1 <= number <= len(self.lines):
+                print("Invalid line number.\n")
+                return
+
+            self.lines[number - 1] = input("Enter new text: ")
+            print("Line updated successfully.\n")
+
+        except ValueError:
+            print("Enter a valid line number.\n")
+
+    # 5. Delete line
+    def delete_line(self):
+        if not self.lines:
+            print("\nDocument is empty.\n")
+            return
+
+        self.read()
+
+        try:
+            number = int(input("Enter line number to delete: "))
+
+            if not 1 <= number <= len(self.lines):
+                print("Invalid line number.\n")
+                return
+
+            deleted = self.lines.pop(number - 1)
+
+            print(f"Deleted: {deleted}")
+            print("Line deleted successfully.\n")
+
+        except ValueError:
+            print("Enter a valid line number.\n")
+
+    # 6. Clear document
+    def clear_document(self):
+        if not self.lines:
+            print("\nDocument is already empty.\n")
+            return
+
+        confirm = input("Clear entire document? (y/n): ")
+
+        if confirm.lower() == "y":
+            self.lines.clear()
+            print("Document cleared successfully.\n")
+        else:
+            print("Operation cancelled.\n")
+
+    # 7. Save file
 
 
 def clear_document():
